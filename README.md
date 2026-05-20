@@ -8,3 +8,4 @@ I will try to solve the most important problems asked in interviews.
 ## Array
 
 - [Two Sum](./Array/two-sum.js)
+- [Contains Duplicate](./Array/contains-duplicate.js)
