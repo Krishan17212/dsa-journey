@@ -10,3 +10,4 @@ I will try to solve the most important problems asked in interviews.
 - [Two Sum](./Array/two-sum.js)
 - [Contains Duplicate](./Array/contains-duplicate.js)
 - [Best Time to Buy and Sell Stock](./Array/best-time-to-buy-sell-stock.js)
+- [Maximum Subarray](./Array/maximum-subarray.js)
