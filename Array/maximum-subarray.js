@@ -13,18 +13,18 @@ Input:  [-3, -1, -2]
 Output: -1   ← all negative, best is the least negative
 */
 
-function maxSubarrayBrute(nums) {
-    let maxSum = -Infinity; // O(n^2)
+function maxSubarrayBrute(nums) { // O(n^2)
+    let maxSum = -Infinity;
 
-    for (let start = 0; start < nums.length; start++) {
+    for (let i = 0; i < nums.length; i++) {
         let currentSum = 0;
 
-        for (let end = start; end < nums.length; end++) {
-            currentSum += nums[end];
+        for (let j = i; j < nums.length; j++) {
+            currentSum += nums[j];
             maxSum = Math.max(maxSum, currentSum);
         }
     }
     return maxSum;
 }
 
-console.log(maxSubarrayBrute([-2, 1, -3, 4, -1, 2, 1, -5, 4])); // 6
+// console.log(maxSubarrayBrute([-2, 1, -3, 4, -1, 2, 1, -5, 4])); // 6
