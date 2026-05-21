@@ -28,3 +28,27 @@ function maxSubarrayBrute(nums) { // O(n^2)
 }
 
 // console.log(maxSubarrayBrute([-2, 1, -3, 4, -1, 2, 1, -5, 4])); // 6
+
+
+/**
+ * OPTIMAL — Maximum Subarray (Kadane's Algorithm)
+ * Single pass, tracking current subarray sum and global max
+ * Time: O(n) | Space: O(1)
+ *
+ * Key Insight: If the running sum becomes negative, it hurts
+ * future subarrays. Reset it to 0 and start fresh.
+ * Track the maximum sum seen at any point.
+ */
+function maxSubarray(nums) { // O(n)
+    let maxSum = nums[0];
+    let currentSum = nums[0];
+
+    for (let i = 1; i < nums.length; i++) {
+        currentSum = Math.max(nums[i], currentSum + nums[i]);
+        maxSum = Math.max(maxSum, currentSum);
+    }
+
+    return maxSum;
+}
+
+console.log(maxSubarray([-2, 1, -3, 4, -1, 2, 1, -5, 4])); // 6
