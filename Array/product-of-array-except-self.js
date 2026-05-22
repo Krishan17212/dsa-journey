@@ -50,7 +50,7 @@ function productExceptSelfBrute(nums) { // O(n^2)
  * Build left products and right products separately
  * Time: O(n) | Space: O(n)
  */
-function approachOne(nums) {
+function approachOne(nums) { // O(n)
     const n = nums.length;
     const prefix = new Array(n).fill(1);
     const suffix = new Array(n).fill(1);
@@ -71,3 +71,35 @@ function approachOne(nums) {
 }
 
 // console.log(approachOne([1, 2, 3, 4]));
+
+
+/**
+ * OPTIMAL — Product of Array Except Self
+ * Output array stores prefix products first,
+ * then a running suffix multiplied in from the right
+ * Time: O(n) | Space: O(1) — output array doesn't count
+ *
+ * Key Insight: Two passes over the array.
+ * Pass 1 (left→right): fill output with prefix products
+ * Pass 2 (right→left): multiply in suffix products on the fly
+ */
+function productExceptSelfOptimize(nums) { //O(n)
+    const n = nums.length;
+    const output = new Array(n).fill(1);
+
+    let prefix = 1;
+    for (let i = 0; i < n; i++) {
+        output[i] = prefix;
+        prefix *= nums[i];
+    }
+    let suffix = 1;
+    for (let i = n - 1; i >= 0; i--) {
+        output[i] *= suffix;
+        suffix *= nums[i];
+    }
+
+    return output;
+}
+
+
+// console.log(productExceptSelfOptimize([1, 2, 3, 4]));
