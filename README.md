@@ -11,3 +11,4 @@ I will try to solve the most important problems asked in interviews.
 - [Contains Duplicate](./Array/contains-duplicate.js)
 - [Best Time to Buy and Sell Stock](./Array/best-time-to-buy-sell-stock.js)
 - [Maximum Subarray](./Array/maximum-subarray.js)
+- [Product of Array Except Self](./Array/product-of-array-except-self.js)
