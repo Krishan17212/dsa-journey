@@ -40,3 +40,34 @@ function productExceptSelfBrute(nums) { // O(n^2)
 
     return output;
 }
+
+// console.log(productExceptSelfBrute([1, 2, 3, 4]));
+
+
+
+/**
+ * APPROACH 1 — Prefix and Suffix Arrays
+ * Build left products and right products separately
+ * Time: O(n) | Space: O(n)
+ */
+function approachOne(nums) {
+    const n = nums.length;
+    const prefix = new Array(n).fill(1);
+    const suffix = new Array(n).fill(1);
+    const output = new Array(n);
+
+    for (let i = 1; i < n; i++) {
+        prefix[i] = prefix[i - 1] * nums[i - 1];
+    }
+
+    for (let i = n - 2; i >= 0; i--) {
+        suffix[i] = suffix[i + 1] * nums[i + 1];
+    }
+    for (let i = 0; i < n; i++) {
+        output[i] = prefix[i] * suffix[i];
+    }
+
+    return output;
+}
+
+// console.log(approachOne([1, 2, 3, 4]));
