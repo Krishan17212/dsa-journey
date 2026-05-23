@@ -8,5 +8,9 @@ function findOddEvenBrute(num) {
     }
 }
 
+function cleanApprochß(num) {
+    return num % 2 == 0 ? "Even" : "Odd";
+}
 
-console.log(findOddEvenBrute(16))
+
+console.log(cleanApprochß(16))
