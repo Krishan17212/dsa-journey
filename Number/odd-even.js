@@ -12,5 +12,9 @@ function cleanApprochß(num) {
     return num % 2 == 0 ? "Even" : "Odd";
 }
 
+function bitApproach(num) {
+    return num & 1 == 0 ? "Even" : "Odd"; ß
+}
 
-console.log(cleanApprochß(16))
+
+console.log(bitApproach(16))
