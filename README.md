@@ -12,6 +12,7 @@ I will try to solve the most important problems asked in interviews.
 - [Best Time to Buy and Sell Stock](./Array/best-time-to-buy-sell-stock.js)
 - [Maximum Subarray](./Array/maximum-subarray.js)
 - [Product of Array Except Self](./Array/product-of-array-except-self.js)
+- [Sliding Window Maximum](./Array/sliding-window.js)
 
 ## Number
 
