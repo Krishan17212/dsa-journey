@@ -23,4 +23,36 @@ const slidingWindowMaxNaive = (nums, k) => {
     return result;
 };
 
-console.log(slidingWindowMaxNaive([1, 3, -1, -3, 5, 3, 6, 7], 3))
+const maxSlidingWindowOptimized = (nums, k) => {
+
+    let deque = [];
+    let result = [];
+
+    for (let i = 0; i < nums.length; i++) {
+
+        // Remove indexes outside window
+        while (deque.length && deque[0] <= i - k) {
+            deque.shift();
+        }
+
+        // Remove smaller elements
+        while (
+            deque.length &&
+            nums[deque[deque.length - 1]] < nums[i]
+        ) {
+            deque.pop();
+        }
+
+        // Add current index
+        deque.push(i);
+
+        // Start storing answers
+        if (i >= k - 1) {
+            result.push(nums[deque[0]]);
+        }
+    }
+
+    return result;
+}
+
+console.log(maxSlidingWindowOptimized([1, 3, -1, -3, 5, 3, 6, 7], 3))
