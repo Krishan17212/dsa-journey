@@ -27,3 +27,28 @@ function maxProductBrute(nums) {
 
     return maxProduct;
 }
+
+function maxProduct(nums) {
+    let globalMax = nums[0];
+    let currentMin = nums[0];
+    let currentMax = nums[0];
+
+    for (let i = 1; i < nums.length; i++) {
+        const num = nums[i];
+
+        // store all three elements into one array
+        const allValues = [num, currentMax * num, currentMin * num];
+
+        // save min and max values into temp variables
+        const newMax = Math.max(...allValues);
+        const newMin = Math.min(...allValues);
+
+        // now update with previous values
+        currentMax = newMax;
+        currentMin = newMin;
+
+        // update global max with maximum values
+        globalMax = Math.max(globalMax, currentMax);
+    }
+    return globalMax;
+}
