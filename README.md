@@ -13,6 +13,9 @@ I will try to solve the most important problems asked in interviews.
 - [Maximum Subarray](./Array/maximum-subarray.js)
 - [Product of Array Except Self](./Array/product-of-array-except-self.js)
 - [Sliding Window Maximum](./Array/sliding-window.js)
+- [Contains Duplicate II](./Array/contains-duplicate-ii.js)
+
+
 
 ## Number
 
