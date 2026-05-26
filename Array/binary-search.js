@@ -39,4 +39,27 @@ function findMinBinarySearch(nums) {
     return nums[left];
 }
 
-console.log(findMinBinarySearch([3, 4, 5, 1, 2]));
+// console.log(findMinBinarySearch([3, 4, 5, 1, 2]));
+
+
+// Same rotated sorted array. But now instead of finding the minimum,
+// find a specific target value. Return its index, or -1 if not found.
+
+// Input:  nums = [4, 5, 6, 7, 0, 1, 2],  target = 0
+// Output: 4
+
+// Input:  nums = [4, 5, 6, 7, 0, 1, 2],  target = 3
+// Output: -1
+
+// Input:  nums = [1],  target = 0
+// Output: -1
+
+
+function searchBrute(nums, target) {
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === target) return i;
+    }
+    return -1;
+}
+
+console.log("linear ", searchBrute([4, 5, 6, 7, 0, 1, 2], 0));
