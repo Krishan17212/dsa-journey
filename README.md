@@ -14,6 +14,7 @@ I will try to solve the most important problems asked in interviews.
 - [Product of Array Except Self](./Array/product-of-array-except-self.js)
 - [Sliding Window Maximum](./Array/sliding-window.js)
 - [Contains Duplicate II](./Array/contains-duplicate-ii.js)
+- [Find Minimum in Rotated Sorted Array](./Array/binary-search.js)
 
 
 
