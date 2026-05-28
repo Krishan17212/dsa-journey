@@ -1,0 +1,30 @@
+// Given an integer array, return all unique triplets that sum to zero.
+// No duplicate triplets in the output.
+
+
+// Input:  nums = [-1,0,1,2,-1,-4]
+// Output: [[-1,-1,2],[-1,0,1]]
+
+function threeSumBrute(nums) {
+    const result = [];
+    const seen = new Set();
+    nums.sort((a, b) => a - b);
+
+    for (let i = 0; i < nums.length - 2; i++) {
+        for (let j = i + 1; j < nums.length - 1; j++) {
+            for (let k = j + 1; k < nums.length; k++) {
+                if (nums[i] + nums[j] + nums[k] === 0) {
+                    const key = `${nums[i]},${nums[j]},${nums[k]}`;
+                    if (!seen.has(key)) {
+                        seen.add(key);
+                        result.push([nums[i], nums[j], nums[k]]);
+                    }
+                }
+            }
+        }
+    }
+
+    return result;
+}
+
+// console.log(threeSumBrute([-1, 0, 1, 2, -1, -4])); //O(n^3) three nested loopsway to slow
