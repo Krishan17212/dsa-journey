@@ -15,6 +15,7 @@ I will try to solve the most important problems asked in interviews.
 - [Sliding Window Maximum](./Array/sliding-window.js)
 - [Contains Duplicate II](./Array/contains-duplicate-ii.js)
 - [Find Minimum in Rotated Sorted Array](./Array/binary-search.js)
+- [3Sum](./Array/three-sum.js)
 
 
 
