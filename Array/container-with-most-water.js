@@ -34,3 +34,31 @@ console.log("Max area using brute force: ", maxAreaBrute([1, 8, 6, 2, 5, 4, 8, 3
 console.log("Max area using brute force: ", maxAreaBrute([1, 1]));
 
 // Time O(n^2) | space O(1)
+
+
+
+function maxArea(height) {
+    let left = 0;
+    let right = height.length - 1;
+    let maxWater = 0;
+
+    while (left < right) {
+        const width = right - left;
+        const h = Math.min(height[left], height[right]);
+        const volume = width * h;
+        maxWater = Math.max(maxWater, volume);
+        if (height[left] <= height[right]) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+
+    return maxWater;
+}
+
+
+console.log("Max area using two pointers: ", maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]));
+console.log("Max area using two pointers: ", maxArea([1, 1]));
+
+// Time O(n) | space O(1)
