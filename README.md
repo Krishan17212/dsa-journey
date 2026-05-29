@@ -16,6 +16,7 @@ I will try to solve the most important problems asked in interviews.
 - [Contains Duplicate II](./Array/contains-duplicate-ii.js)
 - [Find Minimum in Rotated Sorted Array](./Array/binary-search.js)
 - [3Sum](./Array/three-sum.js)
+- [Container With Most Water](./Array/container-with-most-water.js)
 
 
 
