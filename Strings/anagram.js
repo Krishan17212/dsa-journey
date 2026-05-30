@@ -16,5 +16,31 @@ function isAnagramSort(s, t) {
   return s.split("").sort().join("") === t.split("").sort().join("");
 }
 
-console.log(isAnagramSort("anagram", "nagaram"));
-console.log(isAnagramSort("rat", "car"));
+// console.log(isAnagramSort("anagram", "nagaram"));
+// console.log(isAnagramSort("rat", "car"));
+
+function isAnagramOptimise(s, t) {
+  if (s.length != t.length) return false;
+
+  const map = {};
+
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+    map[char] = (map[char] || 0) + 1;
+  }
+
+  for (let i = 0; i < t.length; i++) {
+    const char = t[i];
+    if (!map[char]) return false;
+    map[char] -= 1;
+  }
+
+  for (let key in map) {
+    if (map[key] !== 0) return false;
+  }
+
+  return true;
+}
+
+console.log(isAnagramOptimise("anagram", "nagaram"));
+console.log(isAnagramOptimise("rat", "car"));
