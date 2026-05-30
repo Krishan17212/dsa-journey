@@ -16,36 +16,37 @@ Why?   Prices only go down. No profitable trade exists. */
  * Try every pair where buy index < sell index
  * Time: O(n²) | Space: O(1)
  */
-function maxProfitBrute(prices) { // O(n^2)
-    let maxProfit = 0;
+function maxProfitBrute(prices) {
+  // O(n^2)
+  let maxProfit = 0;
 
-    for (let buy = 0; buy < prices.length; buy++) {
-        for (let sell = buy + 1; sell < prices.length; sell++) {
-            const profit = prices[sell] - prices[buy];
-            maxProfit = Math.max(maxProfit, profit);
-        }
+  for (let buy = 0; buy < prices.length; buy++) {
+    for (let sell = buy + 1; sell < prices.length; sell++) {
+      const profit = prices[sell] - prices[buy];
+      maxProfit = Math.max(maxProfit, profit);
     }
+  }
 
-    return maxProfit;
+  return maxProfit;
 }
-
 
 // Optimise method
 
-function maxProfitOptimise(ßprices) { // O(n)
-    let minPrice = prices[0];
-    let maxProfit = 0;
+function maxProfitOptimise(prices) {
+  // O(n)
+  let minPrice = prices[0];
+  let maxProfit = 0;
 
-    for (let i = 1; i < prices.length; i++) {
-        const today = prices[i];
+  for (let i = 1; i < prices.length; i++) {
+    const today = prices[i];
 
-        if (today < minPrice) {
-            minPrice = today;
-        } else {
-            const profit = today - minPrice;
-            maxProfit = Math.max(maxProfit, profit);
-        }
+    if (today < minPrice) {
+      minPrice = today;
+    } else {
+      const profit = today - minPrice;
+      maxProfit = Math.max(maxProfit, profit);
     }
+  }
 
-    return maxProfit;
+  return maxProfit;
 }
