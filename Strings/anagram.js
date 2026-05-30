@@ -16,5 +16,5 @@ function isAnagramSort(s, t) {
   return s.split("").sort().join("") === t.split("").sort().join("");
 }
 
-console.log(isAnagramSort("anagram", "nagaram")); // true
-console.log(isAnagramSort("rat", "car")); // false
+console.log(isAnagramSort("anagram", "nagaram"));
+console.log(isAnagramSort("rat", "car"));
