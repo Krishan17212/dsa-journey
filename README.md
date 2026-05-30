@@ -18,9 +18,10 @@ I will try to solve the most important problems asked in interviews.
 - [3Sum](./Array/three-sum.js)
 - [Container With Most Water](./Array/container-with-most-water.js)
 
+## Strings
 
+- [Valid Anagram](./Strings/anagram.js)
 
 ## Number
 
 - [Factors](./Number/factors.js)
-
