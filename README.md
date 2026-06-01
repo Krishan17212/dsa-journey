@@ -22,6 +22,10 @@ I will try to solve the most important problems asked in interviews.
 
 - [Valid Anagram](./Strings/anagram.js)
 
+## Loops
+
+- [For Loop](./Loops/forLoop.js)
+
 ## Number
 
 - [Factors](./Number/factors.js)
