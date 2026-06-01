@@ -83,4 +83,36 @@ function invertedPyramid(num) {
   }
 }
 
-invertedPyramid(5);
+// invertedPyramid(5);
+
+function butterflyPattern(num) {
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row += "*";
+    }
+    for (let j = 1; j <= 2 * (num - i); j++) {
+      row += " ";
+    }
+    for (let j = 1; j <= i; j++) {
+      row += "*";
+    }
+    console.log(row);
+  }
+
+  for (let i = num - 1; i >= 1; i--) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row += "*";
+    }
+    for (let j = 1; j <= 2 * (num - i); j++) {
+      row += " ";
+    }
+    for (let j = 1; j <= i; j++) {
+      row += "*";
+    }
+    console.log(row);
+  }
+}
+
+butterflyPattern(5);
