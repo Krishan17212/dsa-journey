@@ -51,4 +51,21 @@ function leftTriangle(num) {
   }
 }
 
-leftTriangle(5);
+// leftTriangle(5);
+
+// Pyramid
+
+function pyramid(num) {
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row += " ";
+    }
+    for (let j = 1; j <= i * 2 - 1; j++) {
+      row += "*";
+    }
+    console.log(row);
+  }
+}
+
+pyramid(5);
