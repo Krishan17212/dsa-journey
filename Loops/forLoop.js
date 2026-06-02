@@ -153,4 +153,22 @@ function alphabeticPatternV3(num) {
   }
 }
 
-alphabeticPatternV3(5);
+// alphabeticPatternV3(5);
+
+function alphabeticPyramid(num) {
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row += " ";
+    }
+    for (let j = 1; j <= i; j++) {
+      row += String.fromCharCode(64 + j);
+    }
+    for (let j = 1; j <= i - 1; j++) {
+      row += String.fromCharCode(64 + i - j);
+    }
+    console.log(row);
+  }
+}
+
+alphabeticPyramid(5);
