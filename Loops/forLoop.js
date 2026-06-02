@@ -127,4 +127,16 @@ function alphabeticPattern(num) {
   }
 }
 
-alphabeticPattern(5);
+// alphabeticPattern(5);
+
+function alphabeticPatternV2(num) {
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row += String.fromCharCode(64 + i);
+    }
+    console.log(row);
+  }
+}
+
+alphabeticPatternV2(5);
