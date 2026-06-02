@@ -115,4 +115,16 @@ function butterflyPattern(num) {
   }
 }
 
-butterflyPattern(5);
+// butterflyPattern(5);
+
+function alphabeticPattern(num) {
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row += String.fromCharCode(64 + j);
+    }
+    console.log(row);
+  }
+}
+
+alphabeticPattern(5);
