@@ -139,4 +139,18 @@ function alphabeticPatternV2(num) {
   }
 }
 
-alphabeticPatternV2(5);
+// alphabeticPatternV2(5);
+
+function alphabeticPatternV3(num) {
+  let n = 65;
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row += String.fromCharCode(n) + " ";
+      n++;
+    }
+    console.log(row);
+  }
+}
+
+alphabeticPatternV3(5);
