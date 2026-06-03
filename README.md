@@ -7,7 +7,6 @@ I will try to solve the most important problems asked in interviews.
 
 ## Array
 
-- [Two Sum](./Array/two-sum.js)
 - [Contains Duplicate](./Array/contains-duplicate.js)
 - [Best Time to Buy and Sell Stock](./Array/best-time-to-buy-sell-stock.js)
 - [Maximum Subarray](./Array/maximum-subarray.js)
@@ -29,3 +28,7 @@ I will try to solve the most important problems asked in interviews.
 ## Number
 
 - [Factors](./Number/factors.js)
+
+## Objects
+
+- [Two Sum](./Objects/twoSum.js)
