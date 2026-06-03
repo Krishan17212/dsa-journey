@@ -171,4 +171,22 @@ function alphabeticPyramid(num) {
   }
 }
 
-alphabeticPyramid(5);
+// alphabeticPyramid(5);
+
+function invertedAlphabeticPyramid(num) {
+  for (let i = num; i >= 1; i--) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row += " ";
+    }
+    for (let j = 1; j <= i; j++) {
+      row += String.fromCharCode(64 + j);
+    }
+    for (let j = 1; j <= i - 1; j++) {
+      row += String.fromCharCode(64 + i - j);
+    }
+    console.log(row);
+  }
+}
+
+invertedAlphabeticPyramid(5);
