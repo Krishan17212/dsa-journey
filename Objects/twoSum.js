@@ -21,3 +21,21 @@ function twoSum(nums, target) {
 }
 
 // console.log(twoSum([2, 7, 11, 15], 9));
+
+function twoSumOptimized(nums, target) {
+  // O(n)
+  const obj = new Map();
+
+  for (let i = 0; i < nums.length; i++) {
+    var n = nums[i];
+
+    if (obj[target - n] >= 0) {
+      return [obj[target - n], i];
+    }
+    obj[n] = i;
+  }
+
+  return null;
+}
+
+console.log(twoSumOptimized([2, 7, 11, 15], 9));
