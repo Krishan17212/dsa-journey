@@ -16,6 +16,7 @@ I will try to solve the most important problems asked in interviews.
 - [Find Minimum in Rotated Sorted Array](./Array/binary-search.js)
 - [3Sum](./Array/three-sum.js)
 - [Container With Most Water](./Array/container-with-most-water.js)
+- [Longest Substring Without Repeating Characters](./Array/longest-substring-without-repeating.js)
 
 ## Strings
 
