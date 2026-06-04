@@ -27,4 +27,32 @@ function lengthOfLongestSubstringBrute(s) {
   return maxLen;
 }
 
-console.log(lengthOfLongestSubstringBrute("abcabcbb"));
+// console.log(lengthOfLongestSubstringBrute("abcabcbb"));
+
+// Sliding window with HashSet
+
+// Time: O(n)
+// Space: O(min(n, m)) where m = size of charset
+
+function lengthOfLongestSubstring(s) {
+  const window = new Set();
+  let left = 0;
+  let maxLen = 0;
+
+  for (let right = 0; right < s.length; right++) {
+    const char = s[right];
+
+    while (window.has(char)) {
+      window.delete(s[left]);
+      left++;
+    }
+
+    window.add(char);
+
+    maxLen = Math.max(maxLen, right - left + 1);
+  }
+
+  return maxLen;
+}
+
+console.log(lengthOfLongestSubstring("abcabcbb"));
