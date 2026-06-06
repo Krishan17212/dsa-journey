@@ -22,6 +22,7 @@ function containsAll(window, tFreq) {
 }
 
 function minWindowBrute(s, t) {
+  // O(n² × m)
   if (!t.length || !s.length) return "";
 
   // Build target frequency map
@@ -48,4 +49,57 @@ function minWindowBrute(s, t) {
   return result;
 }
 
-console.log(minWindowBrute("ADOBECODEBANC", "ABC"));
+// console.log(minWindowBrute("ADOBECODEBANC", "ABC"));
+
+function minWindow(s, t) {
+  if (!s.length || !t.length) return "";
+  const tFreq = new Map();
+  for (const char of t) {
+    tFreq.set(char, (tFreq.get(char) || 0) + 1);
+  }
+
+  const required = tFreq.size;
+  let formed = 0;
+
+  const windowFreq = new Map();
+  let minLen = Infinity;
+  let resultLeft = 0;
+  let resultRight = 0;
+
+  let left = 0;
+
+  for (let right = 0; right < s.length; right++) {
+    const char = s[right];
+    windowFreq.set(char, (windowFreq.get(char) || 0) + 1);
+
+    if (tFreq.has(char) && windowFreq.get(char) === tFreq.get(char)) {
+      formed++;
+    }
+
+    while (formed === required && left <= right) {
+      if (right - left + 1 < minLen) {
+        minLen = right - left + 1;
+        resultLeft = left;
+        resultRight = right;
+      }
+
+      const leftChar = s[left];
+      windowFreq.set(leftChar, windowFreq.get(leftChar) - 1);
+
+      if (
+        tFreq.has(leftChar) &&
+        windowFreq.get(leftChar) < tFreq.get(leftChar)
+      ) {
+        formed--;
+      }
+
+      left++;
+    }
+  }
+
+  return minLen === Infinity ? "" : s.slice(resultLeft, resultRight + 1);
+}
+
+console.log(minWindow("ADOBECODEBANC", "ABC"));
+console.log(minWindow("a", "a"));
+console.log(minWindow("a", "aa"));
