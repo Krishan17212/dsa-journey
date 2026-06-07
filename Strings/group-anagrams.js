@@ -45,4 +45,26 @@ function groupAnagramsBrute(strs) {
   return result;
 }
 
-console.log(groupAnagramsBrute(["eat", "tea", "tan", "ate", "nat", "bat"]));
+// console.log(groupAnagramsBrute(["eat", "tea", "tan", "ate", "nat", "bat"]));
+
+// Approach 1 with sorting
+
+function groupAnagramsWithSorting(strs) {
+  // O(n × k log k)
+  const map = new Map();
+
+  for (const str of strs) {
+    const key = str.split("").sort().join("");
+
+    if (!map.has(key)) {
+      map.set(key, []);
+    }
+    map.get(key).push(str);
+  }
+
+  return Array.from(map.values());
+}
+
+console.log(
+  groupAnagramsWithSorting(["eat", "tea", "tan", "ate", "nat", "bat"]),
+);
