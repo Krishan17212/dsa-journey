@@ -65,6 +65,28 @@ function groupAnagramsWithSorting(strs) {
   return Array.from(map.values());
 }
 
-console.log(
-  groupAnagramsWithSorting(["eat", "tea", "tan", "ate", "nat", "bat"]),
-);
+// console.log(
+//   groupAnagramsWithSorting(["eat", "tea", "tan", "ate", "nat", "bat"]),
+// );
+
+// Apprach 2 without sorting
+
+function groupAnagramsOptimal(strs) {
+  const map = new Map();
+
+  for (const str of strs) {
+    const freq = new Array(26).fill(0);
+    for (const char of str) {
+      freq[char.charCodeAt(0) - 97]++;
+    }
+
+    const key = freq.join("#");
+
+    if (!map.has(key)) map.set(key, []);
+    map.get(key).push(str);
+  }
+
+  return Array.from(map.values());
+}
+
+console.log(groupAnagramsOptimal(["eat", "tea", "tan", "ate", "nat", "bat"]));
