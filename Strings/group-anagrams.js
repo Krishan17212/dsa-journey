@@ -72,6 +72,7 @@ function groupAnagramsWithSorting(strs) {
 // Apprach 2 without sorting
 
 function groupAnagramsOptimal(strs) {
+  // O(n × k)
   const map = new Map();
 
   for (const str of strs) {

@@ -22,6 +22,7 @@ I will try to solve the most important problems asked in interviews.
 
 - [Valid Anagram](./Strings/anagram.js)
 - [Minimum Window Substring](./Strings/minimum-window-substring.js)
+- [Group Anagrams](./Strings/group-anagrams.js)
 
 ## Loops
 
