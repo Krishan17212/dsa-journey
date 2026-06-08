@@ -34,3 +34,33 @@ function isValidBrute(s) {
 // console.log(isValidBrute("(]"));       // false
 // console.log(isValidBrute("([)]"));     // false
 // console.log(isValidBrute("{[]}"));     // true
+
+function isValidOptimal(s) {
+  const stack = [];
+
+  const pairs = {
+    ")": "(",
+    "]": "[",
+    "}": "{",
+  };
+
+  for (const ch of s) {
+    if (ch === "(" || ch === "[" || ch === "{") {
+      stack.push(ch);
+    } else {
+      const top = stack.pop();
+
+      if (top !== pairs[ch]) {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
+}
+
+console.log(isValidOptimal("()")); // true
+console.log(isValidOptimal("()[]{}")); // true
+console.log(isValidOptimal("(]")); // false
+console.log(isValidOptimal("([)]")); // false
+console.log(isValidOptimal("{[]}")); // true
