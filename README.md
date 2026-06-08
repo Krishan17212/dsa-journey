@@ -35,3 +35,7 @@ I will try to solve the most important problems asked in interviews.
 ## Objects
 
 - [Two Sum](./Objects/twoSum.js)
+
+## Stack
+
+- [Valid Parentheses](./Stack/valid-parentheses.js)
