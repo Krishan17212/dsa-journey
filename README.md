@@ -39,3 +39,4 @@ I will try to solve the most important problems asked in interviews.
 ## Stack
 
 - [Valid Parentheses](./Stack/valid-parentheses.js)
+- [Min Stack](./Stack/min-stack.js)
