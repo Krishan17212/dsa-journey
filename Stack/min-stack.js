@@ -72,3 +72,41 @@ class MinStack {
     return this.stack[this.stack.length - 1][1]; // the stored min
   }
 }
+
+// Approach 2 — Auxiliary Min Stack
+
+class MinStackAux {
+  constructor() {
+    this.stack = []; // main stack
+    this.minStack = []; // tracks minimums only
+  }
+
+  push(val) {
+    this.stack.push(val);
+
+    // Push to minStack only if val is new minimum (or minStack empty)
+    if (
+      this.minStack.length === 0 ||
+      val <= this.minStack[this.minStack.length - 1]
+    ) {
+      this.minStack.push(val);
+    }
+  }
+
+  pop() {
+    const removed = this.stack.pop();
+
+    // If we're removing the current minimum, update minStack too
+    if (removed === this.minStack[this.minStack.length - 1]) {
+      this.minStack.pop();
+    }
+  }
+
+  top() {
+    return this.stack[this.stack.length - 1];
+  }
+
+  getMin() {
+    return this.minStack[this.minStack.length - 1];
+  }
+}
