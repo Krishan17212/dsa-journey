@@ -1,0 +1,44 @@
+// Design a stack that supports:
+
+// push(val) — push element onto stack
+// pop() — remove top element
+// top() — get top element
+// getMin() — retrieve minimum element in O(1)
+
+// All operations must be O(1).
+// MinStack stack = new MinStack();
+// stack.push(-2);
+// stack.push(0);
+// stack.push(-3);
+// stack.getMin(); → -3
+// stack.pop();
+// stack.top();    → 0
+// stack.getMin(); → -2
+
+// The hard part: getMin() must be O(1).
+// Think about:
+
+// A regular stack doesn't track minimums — how do you add that?
+// When you pop an element, how do you know what the new minimum is?
+// Can you store extra information alongside each value?
+
+// Naive Approach — Scan For Minimum
+
+class MinStackNaive {
+  constructor() {
+    this.stack = [];
+  }
+
+  push(val) {
+    this.stack.push(val);
+  }
+  pop() {
+    this.stack.pop();
+  }
+  top() {
+    return this.stack[this.stack.length - 1];
+  }
+  getMin() {
+    return Math.min(...this.stack);
+  } // O(n) ❌
+}
