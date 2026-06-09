@@ -42,3 +42,33 @@ class MinStackNaive {
     return Math.min(...this.stack);
   } // O(n) ❌
 }
+
+// Approach 1 — Stack of [value, currentMin] Pairs
+
+class MinStack {
+  constructor() {
+    this.stack = [];
+  }
+
+  push(val) {
+    // Current min is either this new value, or whatever min was before
+    const currentMin =
+      this.stack.length === 0
+        ? val
+        : Math.min(val, this.stack[this.stack.length - 1][1]);
+
+    this.stack.push([val, currentMin]);
+  }
+
+  pop() {
+    this.stack.pop(); // min automatically restored to previous frame
+  }
+
+  top() {
+    return this.stack[this.stack.length - 1][0]; // just the value
+  }
+
+  getMin() {
+    return this.stack[this.stack.length - 1][1]; // the stored min
+  }
+}
