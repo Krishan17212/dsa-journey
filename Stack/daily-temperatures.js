@@ -27,7 +27,7 @@ function dailyTemperaturesBrute(temperatures) {
   for (let i = 0; i < temperatures.length; i++) {
     for (let j = i + 1; j < temperatures.length; j++) {
       if (temperatures[j] > temperatures[i]) {
-        result[i] = j - i; // days to wait
+        result[i] = j - i;
         break;
       }
     }
@@ -37,4 +37,25 @@ function dailyTemperaturesBrute(temperatures) {
   return result;
 }
 
-console.log(dailyTemperaturesBrute([73, 74, 75, 71, 69, 72, 76, 73]));
+// console.log(dailyTemperaturesBrute([73, 74, 75, 71, 69, 72, 76, 73]));
+
+function dailyTemperaturesOptimized(temperatures) {
+  const n = temperatures.length;
+  const result = new Array(n).fill(0);
+  const stack = [];
+
+  for (let i = 0; i < n; i++) {
+    while (
+      stack.length > 0 &&
+      temperatures[i] > temperatures[stack[stack.length - 1]]
+    ) {
+      const waitingIndex = stack.pop();
+      result[waitingIndex] = i - waitingIndex;
+    }
+
+    stack.push(i);
+  }
+  return result;
+}
+
+console.log(dailyTemperaturesOptimized([73, 74, 75, 71, 69, 72, 76, 73]));
