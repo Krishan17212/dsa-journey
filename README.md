@@ -40,3 +40,4 @@ I will try to solve the most important problems asked in interviews.
 
 - [Valid Parentheses](./Stack/valid-parentheses.js)
 - [Min Stack](./Stack/min-stack.js)
+- [Daily Temperatures](./Stack/daily-temperatures.js)
